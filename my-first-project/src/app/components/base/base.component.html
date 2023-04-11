@@ -1,0 +1,80 @@
+<div class="col-sm-8 text-left"> 
+    <h1>Welcome</h1>
+    <p>Hi, welcome to my wall, window, blinds, and art hanging business. I have been in the profession for about two years now and have done work all accross Western North Carolina</p>
+    
+    <hr>
+    <h3>Q&A</h3>
+    <p>Ask any questions you would like below</p>
+    <button (click) = "showForm()">Display Form</button>
+    <form *ngIf = "form_visible">
+      <input type = "text" name = "question">
+      <!--needs to be included somewhere else-->
+      <input type = "text" name = "firstname" [(ngModel)] = "data">
+      <p>{{data}}</p>
+    </form>
+    <ul *ngFor = "let item of services">
+        <li>{{item.name}}</li>
+    </ul>
+    <form>
+        <input type = "text" name = "idNumber" placeholder = "id" [(ngModel)] = "idNumber">
+        <input type = "text" name = "language" placeholder = "language" [(ngModel)] = "language">
+        <input type = "text" name = "edition" placeholder = "edition" [(ngModel)] = "edition">
+        <input type = "text" name = "author" placeholder = "author" [(ngModel)] = "author">
+        <input type = "button" name = "book" value = "submit" (click) = "addBook()">
+    </form>
+    <!--ngModel, changing data immediately, 2 way data binding-->
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>
+                    id
+                </th>
+                <th>
+                    language
+                </th>
+                <th>
+                    edition
+                </th>
+                <th>
+                    author
+                </th>
+                <th>
+                    update
+                </th>
+                <th>
+                    delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let item of bookData">
+                <td>
+                    {{item.id}}
+                </td>
+                <td>
+                    {{item.language}}
+                </td>
+                <td>
+                    {{item.edition}}
+                </td>
+                <td>
+                    {{item.author}}
+                </td>
+                <td>
+                    <button class = "update" (click) = "update_item(item.id)">update</button>
+                </td>
+                <td>
+                    <button class = "delete btn btn-danger" (click) = "delete_item(item.id)">delete</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <form>
+        <input type = "text" name = "idnumber_update" placeholder = "{{idNumber_update}}" [(ngModel)] = "idNumber_update">
+        <input type = "text" name = "language_update" placeholder = "{{language_update}}" [(ngModel)] = "language_update">
+        <input type = "text" name = "edition_update" placeholder = "{{edition_update}}" [(ngModel)] = "edition_update">
+        <input type = "text" name = "author_update" placeholder = "{{author_update}}" [(ngModel)] = "author_update">
+        <input type = "button" name = "book_update" value = "update" (click) = "update_book(idNumber_update)">
+    </form>
+</div>

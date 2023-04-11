@@ -1,0 +1,8 @@
+<div class = "form_wrapper">
+    <form>
+        <input type = "text" placeholder = "enter user login" [(ngModel)] = "user_id" name = "user_id">
+        <input type = "text" placeholder= "enter user password" [(ngModel)] = "user_password" name = "user_password">
+        <button (click) = "submit_form()">submit form</button>
+    </form>
+    <p *ngIf = "error == true" class = "error">Your password or username is incorrect.</p>
+</div>

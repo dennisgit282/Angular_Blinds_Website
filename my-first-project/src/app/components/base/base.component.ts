@@ -8,58 +8,45 @@ import { FormsModule } from '@angular/forms';
 })
 export class BaseComponent {
   form_visible: any = false;
-  services:any =  [{
-    name: 'wall'
+  available_services:any =  [{
+    service1: "wall"
     },
     {
-    name: 'window'
+    service2: "window"
     },
     {
-    name: 'art'
+    service3: "art"
     }, 
     {
-    name: 'blinds'
-    }]
-    data: any = ""
-    bookData: any =
-    [
-      {
-         id:"444",
-         language:"C",
-         edition:"First",
-         author:"Dennis Ritchie "
-      },
-      {
-         id:"555",
-         language:"C++",
-         edition:"second",
-         author:" Bjarne Stroustrup "
-      }
-   ]
-  idNumber: any = "";
-  author: any = "";
-  edition: any = "";
-  language: any = "";
-  idNumber_update: any = "";
+    service4: "blinds"
+  }]
+
+  data: any = ""
+   
+  Name: any = ""
+  service1: any = ""
+  service2: any = ""
+  service3: any = ""
+  idNumber_update: any = ""
   author_update: any = ""
   edition_update: any = ""
   language_update: any = ""
   showForm(){
     this.form_visible = true;
   }
-  addBook(){
-    let book = {
-      id: this.idNumber,
-      language: this.language,
-      author: this.author,
-      edition: this.edition,
+  addService(){
+    let customerservices = {
+      Name: this.Name,
+      service1: this.service1,
+      service2: this.service2,
+      service3: this.service3,
     }
-    this.bookData.push(book);
-    console.log(this.bookData);
+    this.available_services.push(customerservices);
+    console.log(this.available_services);
   }
 
   update_item(id: any){
-    let newBookData = [...this.bookData]
+    let newBookData = [...this.available_services]
     let book:any = newBookData.filter(x => {
       return x.id == id;
     })
@@ -73,24 +60,24 @@ export class BaseComponent {
   }
 
   delete_item(id: any){
-    let newBookData = [...this.bookData]
+    let available_services = [...this.available_services]
     let conf:boolean = confirm("do you want to delete")
     if(conf == true){
-      newBookData = newBookData.filter(x => {
+      available_services = available_services.filter(x => {
       
         return x.id !== id
 
       })
     }
 
-    this.bookData = [...newBookData]
+    this.available_services = [...available_services]
   }
 
 
 
 
   update_book(id: any){
-    let newBookData = [...this.bookData]
+    let newBookData = [...this.available_services]
     newBookData.map(x => {
       if(x.id == id){
         x.language = this.language_update
@@ -99,7 +86,7 @@ export class BaseComponent {
       }
     })
     console.log(newBookData)
-    this.bookData = [...newBookData]
+    this.available_services = [...newBookData]
   }
 
 }

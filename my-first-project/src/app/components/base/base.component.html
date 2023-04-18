@@ -12,31 +12,31 @@
       <input type = "text" name = "firstname" [(ngModel)] = "data">
       <p>{{data}}</p>
     </form>
-    <ul *ngFor = "let item of services">
+    <ul *ngFor = "let item of available_services">
         <li>{{item.name}}</li>
     </ul>
     <form>
-        <input type = "text" name = "idNumber" placeholder = "id" [(ngModel)] = "idNumber">
-        <input type = "text" name = "language" placeholder = "language" [(ngModel)] = "language">
-        <input type = "text" name = "edition" placeholder = "edition" [(ngModel)] = "edition">
-        <input type = "text" name = "author" placeholder = "author" [(ngModel)] = "author">
-        <input type = "button" name = "book" value = "submit" (click) = "addBook()">
+        <input type = "text" name = "Customer Name" placeholder = "Name" [(ngModel)] = "Name">
+        <input type = "text" name = "service one" placeholder = "service1" [(ngModel)] = "service1">
+        <input type = "text" name = "service two" placeholder = "service2" [(ngModel)] = "service2">
+        <input type = "text" name = "service three" placeholder = "service3" [(ngModel)] = "service3">
+        <input type = "button" name = "serviceRequest" value = "submit" (click) = "addService()">
     </form>
     <!--ngModel, changing data immediately, 2 way data binding-->
     <table class = "table">
         <thead>
             <tr>
                 <th>
-                    id
+                    Customer Name
                 </th>
                 <th>
-                    language
+                    Service One
                 </th>
                 <th>
-                    edition
+                    Service Two
                 </th>
                 <th>
-                    author
+                    Service Three
                 </th>
                 <th>
                     update
@@ -47,18 +47,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor = "let item of bookData">
+            <tr *ngFor = "let item of available_services">
                 <td>
-                    {{item.id}}
+                    {{item.service1}}
                 </td>
                 <td>
-                    {{item.language}}
+                    {{item.service2}}
                 </td>
                 <td>
-                    {{item.edition}}
+                    {{item.service3}}
                 </td>
                 <td>
-                    {{item.author}}
+                    {{item.service4}}
                 </td>
                 <td>
                     <button class = "update" (click) = "update_item(item.id)">update</button>

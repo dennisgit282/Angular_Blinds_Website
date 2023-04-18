@@ -8,15 +8,15 @@ import { Component } from '@angular/core';
 export class ContactComponent {
   data: any = "";
   contactMethods: any = [{
-    contact: 'outlook-address'
+    contact1: "outlook-address"
     },
 
     {
-    contact: 'phone-number'
+    contact2: "phone-number"
     },
 
     {
-    contact: 'instagram-tag'
+    contact3: "instagram-tag"
     }, 
 
   ]

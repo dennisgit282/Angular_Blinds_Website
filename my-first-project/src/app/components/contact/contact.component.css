@@ -1,5 +1,13 @@
-.phone_number{
-    place-content: center;
-    padding-left: 500px;
+.phone_icon{
+    margin-left: 18px;
+    margin-top: 11px;
+}
+.douglas_icon{
+    margin-left: 18px;
+    margin-top: 11px;
+}
+.hunter_douglas_number{
+    margin-top: 0px;
+    margin-left: 18px;
 }
 

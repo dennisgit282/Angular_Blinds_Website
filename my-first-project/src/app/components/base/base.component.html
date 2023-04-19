@@ -1,7 +1,5 @@
-<div class="col-sm-8 text-left"> 
-    <h1>Welcome</h1>
-    <p>Hi, welcome to my wall, window, blinds, and art hanging business. I have been in the profession for about two years now and have done work all accross Western North Carolina</p>
-    
+<div class = "WelcomeHeader"><i><h1>White Squirrel Wall and Window Decor</h1></i>
+        <p>Hi, welcome to my wall, window, blinds, and art hanging business. I have been in the profession for about two years now and have done work all accross Western North Carolina</p>   
     <hr>
     <h3>Q&A</h3>
     <p>Ask any questions you would like below</p>
@@ -12,9 +10,9 @@
       <input type = "text" name = "firstname" [(ngModel)] = "data">
       <p>{{data}}</p>
     </form>
-    <ul *ngFor = "let item of available_services">
+    <!--<ul *ngFor = "let item of available_services">
         <li>{{item.name}}</li>
-    </ul>
+    </ul>-->
     <form>
         <input type = "text" name = "Customer Name" placeholder = "Name" [(ngModel)] = "Name">
         <input type = "text" name = "service one" placeholder = "service1" [(ngModel)] = "service1">
@@ -78,3 +76,4 @@
         <input type = "button" name = "book_update" value = "update" (click) = "update_book(idNumber_update)">
     </form>
 </div>
+
